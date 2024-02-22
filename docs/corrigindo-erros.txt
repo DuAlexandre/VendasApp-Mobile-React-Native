@@ -1,0 +1,5 @@
+Em Gemfile, alterar a linha ruby ">= 2.6.10" para ruby "3.0.0" faz o erro "Unknown ruby interpreter version (do not know how to handle): >=2.6.10." sumir,
+
+Em package.json, mudar a versão do styled-components para "styled-components": "5.3.9" corrige o problema de tipagem any das props.
+
+Em App.test.tsx corrigir a importação do App para import App from '../src/App';

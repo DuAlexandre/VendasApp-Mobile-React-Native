@@ -1,0 +1,81 @@
+1 - Criação do Projeto
+npx react-native@latest init vendasApp
+
+2 - Criação da Estrutura de Pastas
+- Criar -> src -> modules (Separando aplicação por módulo. Ex: login, profile, etc)
+               -> shared (Onde ficará tudo que for compartilhado em todo projeto. Ex: components, themes, etc)
+               -> App.tsx (Remover o App.tsx da raiz do projeto. Lembrar de atualizar o index.js para o App.tsx dentro de src)
+
+3 - Adicionando styled-components
+npm install --save styled-components
+npm install @types/styled-components-react-native -D
+
+4 - Adicionar ao arquivo tsconfig.json:
+"compilerOptions": {
+    "types": [
+      "@types/styled-components-react-native"
+    ]
+  }
+
+
+5 - Criação de components (arquivo components.txt);
+
+6 - Criação dos themes (colors.ts e theme.ts, dentro de shared)
+
+7 - Criação do enum textTypes (acredito que será aperfeiçoada mais a frente)
+
+8 - Adicionando fontes externas:
+- Crie a pasta assets -> fonts -> fontes que deseja utilizar (arquivos .ttf)
+- Crie o arquivo react-native-config.js na pasta raiz do projeto com a seguinte configuração:
+module.exports = {
+    project: {
+        ios: {},
+        android: {}
+    },
+    assets: ['./src/assets/fonts'],
+}
+- execute o comando npx react-native-asset
+- faça novamente o build da aplicação com npm start e npm run android
+
+9 - Adicionando ao enum textTypes todos os tipos do projeto
+
+10 - Instalação da lib de linear gradient:
+- npm install react-native-linear-gradient --save
+- Instale os pods do gradient -> cd ios; pod install;
+- Execute a build novamente (npm start e npm run android/ios)
+
+11 - Configurando botões (disabled, loading)
+
+12 - Configurando Títulos e Mensagens de erro no input;
+
+13 - Instalando lib de icons:
+- npm install react-native-vector-icons
+- npm i --save-dev @types/react-native-vector-icons
+- Site para icons: https://icomoon.io/
+- No site selecionar a opção 'Iconmoon App'
+- Na aba Iconmoon Free, selecionar a opção 'Select All' no menu hamburguer no canto superior direito;
+- Selecionar 'Generate Font' no canto inferior direito;
+- Selecionar 'Download' no canto inferior esquerdo;
+- Após o donwload e extração do arquivo zip, mova o arquivo 'selection.json' para raiz do projeto;
+- Dentro da pasta fonts selecione o arquivo icomoon.ttf e mova para pasta src/assets/fonts;
+- Crie o arquivo Icon.tsx dentro de src/shared/components/icon com a seguinte configuração:
+----------------------------------------------------------------------
+import { createIconSetFromIcoMoon } from "react-native-vector-icons";
+import icoMoonConfig from '../../../../selection.json'
+
+export const Icon = createIconSetFromIcoMoon(icoMoonConfig);
+----------------------------------------------------------------------
+
+- execute o comando npx react-native-asset
+- faça novamente o build da aplicação com npm start e npm run android
+
+11 - Instalando o axios:
+npm install axios
+
+12 - Instalando react redux
+npm install react-redux
+npm install @reduxjs/toolkit react-redux
+
+13 - Instalando o react navigation
+npm install @react-navigation/native @react-navigation/native-stack
+npm install react-native-screens react-native-safe-area-context

@@ -10,6 +10,9 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import {MenuURL} from '../../../shared/enums/MenuURL.enum';
+import {getAuthorizationToken} from '../../../shared/functions/connection/auth';
+
+const TIME_SLEEP = 5000;
 
 const Splash = () => {
   const {reset} = useNavigation<NavigationProp<ParamListBase>>();
@@ -17,12 +20,24 @@ const Splash = () => {
   const {setUser} = useUserReducer();
 
   useEffect(() => {
+    const findUser = async () => {
+      let returnUser;
+      const token = await getAuthorizationToken();
+      if (token) {
+        returnUser = await request({
+          url: URL_USER,
+          method: MethodEnum.GET,
+          saveGlobal: setUser,
+        });
+      }
+      return returnUser;
+    };
+
     const verifyLogin = async () => {
-      const returnUser = await request({
-        url: URL_USER,
-        method: MethodEnum.GET,
-        saveGlobal: setUser,
-      });
+      const [returnUser] = await Promise.all([
+        findUser(),
+        new Promise<void>(resolve => setTimeout(resolve, TIME_SLEEP)),
+      ]);
 
       if (returnUser) {
         reset({

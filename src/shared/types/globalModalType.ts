@@ -1,5 +1,5 @@
 export interface GlobalModalType {
-    visible: boolean;
-    title: string;
-    text: string;
+  visible: boolean;
+  title: string;
+  text: string;
 }

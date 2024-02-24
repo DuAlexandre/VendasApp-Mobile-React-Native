@@ -10,6 +10,7 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import {MenuURL} from '../enums/MenuURL.enum';
+import {setAuthorizationToken} from '../functions/connection/auth';
 
 export const useRequest = () => {
   const {reset} = useNavigation<NavigationProp<ParamListBase>>();
@@ -23,6 +24,7 @@ export const useRequest = () => {
 
     await connectionAPIPost<ReturnLogin>('http://192.168.1.29:8080/auth', body)
       .then(result => {
+        setAuthorizationToken(result.accessToken);
         setUser(result.user);
         reset({
           index: 0,

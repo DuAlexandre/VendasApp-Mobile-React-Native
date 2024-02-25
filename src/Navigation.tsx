@@ -5,6 +5,7 @@ import Login from './modules/login';
 import Home from './modules/home';
 import {MenuURL} from './shared/enums/MenuURL.enum';
 import Splash from './modules/splash';
+import CreateUser from './modules/createUser';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,11 @@ const Navigation = () => {
           name={MenuURL.HOME}
           component={Home}
           options={{title: 'Home'}}
+        />
+        <Stack.Screen
+          name={MenuURL.CREATE_USER}
+          component={CreateUser}
+          options={{title: 'Cadastrar Novo Usuário'}}
         />
       </Stack.Navigator>
     </NavigationContainer>

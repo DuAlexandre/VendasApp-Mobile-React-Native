@@ -43,7 +43,7 @@ export const useRequest = () => {
       method,
       body,
     )
-      .then((result) => {
+      .then(result => {
         if (saveGlobal) {
           saveGlobal(result);
         }

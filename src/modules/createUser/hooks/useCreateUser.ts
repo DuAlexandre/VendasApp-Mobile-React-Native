@@ -10,6 +10,8 @@ import {
   useNavigation,
 } from '@react-navigation/native';
 import {MenuURL} from '../../../shared/enums/MenuURL.enum';
+import {insertMaskInCpf} from '../../../shared/functions/cpf';
+import {insertMaskInPhone} from '../../../shared/functions/phone';
 
 export const useCreateUser = () => {
   const {request, loading} = useRequest();
@@ -44,9 +46,21 @@ export const useCreateUser = () => {
     event: NativeSyntheticEvent<TextInputChangeEventData>,
     name: string,
   ) => {
+    let text = event.nativeEvent.text;
+    switch (name) {
+      case 'cpf':
+        text = insertMaskInCpf(text);
+        break;
+      case 'phone':
+        text = insertMaskInPhone(text);
+        break;
+      default:
+        text = event.nativeEvent.text;
+    }
+
     setCreateUser(currentCreateUser => ({
       ...currentCreateUser,
-      [name]: event.nativeEvent.text,
+      [name]: text,
     }));
   };
 

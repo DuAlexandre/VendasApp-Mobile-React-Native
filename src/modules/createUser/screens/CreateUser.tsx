@@ -43,6 +43,7 @@ const CreateUser = () => {
         title="CPF:"
       />
       <Input
+        secureTextEntry
         value={createUser.password}
         onChange={event => handleOnChangeInput(event, 'password')}
         margin="0px 0px 16px 0px"
@@ -50,6 +51,7 @@ const CreateUser = () => {
         title="Senha:"
       />
       <Input
+        secureTextEntry
         value={createUser.confirmPassword}
         onChange={event => handleOnChangeInput(event, 'confirmPassword')}
         margin="0px 0px 16px 0px"

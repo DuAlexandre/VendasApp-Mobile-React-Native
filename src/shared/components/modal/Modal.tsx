@@ -1,9 +1,9 @@
-import {Alert, Modal as ModalReact} from 'react-native';
-import {ModalProps as ModalPropsNative} from 'react-native/types';
-import {ContainerModal, IconCloseModal} from './modal.style';
+import { Alert, Modal as ModalReact } from 'react-native';
+import { ModalProps as ModalPropsNative } from 'react-native/types';
+import { ContainerModal, IconCloseModal } from './modal.style';
 import Text from '../text/Text';
-import {theme} from '../../themes/theme';
-import {textTypes} from '../text/textTypes';
+import { theme } from '../../themes/theme';
+import { textTypes } from '../text/textTypes';
 import Button from '../button/Button';
 
 interface ModalProps extends ModalPropsNative {
@@ -12,7 +12,7 @@ interface ModalProps extends ModalPropsNative {
   onCloseModal: () => void;
 }
 
-const Modal = ({title, text, onCloseModal, ...props}: ModalProps) => {
+const Modal = ({ title, text, onCloseModal, ...props }: ModalProps) => {
   return (
     <ModalReact
       animationType="slide"

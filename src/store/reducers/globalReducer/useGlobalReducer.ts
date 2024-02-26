@@ -1,11 +1,11 @@
-import {useDispatch} from 'react-redux';
-import {useAppSelector} from '../../hooks';
-import {setModalAction} from '.';
-import {GlobalModalType} from '../../../shared/types/globalModalType';
+import { useDispatch } from 'react-redux';
+import { useAppSelector } from '../../hooks';
+import { setModalAction } from '.';
+import { GlobalModalType } from '../../../shared/types/globalModalType';
 
 export const useGlobalReducer = () => {
   const dispatch = useDispatch();
-  const {modal} = useAppSelector(state => state.globalReducer);
+  const { modal } = useAppSelector(state => state.globalReducer);
 
   const closeModal = () => {
     dispatch(

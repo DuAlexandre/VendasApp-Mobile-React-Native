@@ -5,8 +5,8 @@ import {
 } from '@react-navigation/native';
 import Text from '../../../shared/components/text/Text';
 import Button from '../../../shared/components/button/Button';
-import {logout} from '../../../shared/functions/connection/auth';
-import {View} from 'react-native';
+import { logout } from '../../../shared/functions/connection/auth';
+import { View } from 'react-native';
 
 const Home = () => {
   const navigation = useNavigation<NavigationProp<ParamListBase>>();

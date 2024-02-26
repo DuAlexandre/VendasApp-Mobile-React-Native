@@ -1,5 +1,5 @@
-import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {GlobalModalType} from '../../../shared/types/globalModalType';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { GlobalModalType } from '../../../shared/types/globalModalType';
 
 interface GlobalStore {
   modal: GlobalModalType;
@@ -23,6 +23,6 @@ export const globalSlice = createSlice({
   },
 });
 
-export const {setModalAction} = globalSlice.actions;
+export const { setModalAction } = globalSlice.actions;
 
 export default globalSlice.reducer;

@@ -1,11 +1,11 @@
-import {TextInputProps} from 'react-native/types';
-import {View} from 'react-native';
-import {ContainerInput, IconEye} from './input.style';
-import {DisplayFlexColumn} from '../globalStyles/globalView.style';
+import { TextInputProps } from 'react-native/types';
+import { View } from 'react-native';
+import { ContainerInput, IconEye } from './input.style';
+import { DisplayFlexColumn } from '../globalStyles/globalView.style';
 import Text from '../text/Text';
-import {textTypes} from '../text/textTypes';
-import {theme} from '../../themes/theme';
-import {useState} from 'react';
+import { textTypes } from '../text/textTypes';
+import { theme } from '../../themes/theme';
+import { useState } from 'react';
 
 interface InputProps extends TextInputProps {
   title?: string;

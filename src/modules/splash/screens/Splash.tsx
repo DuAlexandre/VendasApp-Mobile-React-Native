@@ -1,23 +1,23 @@
-import {useEffect} from 'react';
-import {ContainerSplash, ImageLogoSplash} from '../styles/splash.style';
-import {useRequest} from '../../../shared/hooks/useRequest';
-import {URL_USER} from '../../../shared/constants/urls';
-import {MethodEnum} from '../../../enums/method.enum';
-import {useUserReducer} from '../../../store/reducers/userReducer/useUserReducer';
+import { useEffect } from 'react';
+import { ContainerSplash, ImageLogoSplash } from '../styles/splash.style';
+import { useRequest } from '../../../shared/hooks/useRequest';
+import { URL_USER } from '../../../shared/constants/urls';
+import { MethodEnum } from '../../../enums/method.enum';
+import { useUserReducer } from '../../../store/reducers/userReducer/useUserReducer';
 import {
   NavigationProp,
   ParamListBase,
   useNavigation,
 } from '@react-navigation/native';
-import {MenuURL} from '../../../shared/enums/MenuURL.enum';
-import {getAuthorizationToken} from '../../../shared/functions/connection/auth';
+import { MenuURL } from '../../../shared/enums/MenuURL.enum';
+import { getAuthorizationToken } from '../../../shared/functions/connection/auth';
 
 const TIME_SLEEP = 5000;
 
 const Splash = () => {
-  const {reset} = useNavigation<NavigationProp<ParamListBase>>();
-  const {request} = useRequest();
-  const {setUser} = useUserReducer();
+  const { reset } = useNavigation<NavigationProp<ParamListBase>>();
+  const { request } = useRequest();
+  const { setUser } = useUserReducer();
 
   useEffect(() => {
     const findUser = async () => {
@@ -42,12 +42,12 @@ const Splash = () => {
       if (returnUser) {
         reset({
           index: 0,
-          routes: [{name: MenuURL.HOME}],
+          routes: [{ name: MenuURL.HOME }],
         });
       } else {
         reset({
           index: 0,
-          routes: [{name: MenuURL.LOGIN}],
+          routes: [{ name: MenuURL.LOGIN }],
         });
       }
     };

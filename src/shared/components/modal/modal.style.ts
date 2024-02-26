@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
-import {theme} from '../../themes/theme';
-import {Icon} from '../icon/Icon';
+import { theme } from '../../themes/theme';
+import { Icon } from '../icon/Icon';
 
 export const ContainerModal = styled.View`
   position: absolute;

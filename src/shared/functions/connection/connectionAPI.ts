@@ -1,6 +1,6 @@
-import axios, {AxiosRequestConfig} from 'axios';
-import {MethodEnum} from '../../../enums/method.enum';
-import {getAuthorizationToken} from './auth';
+import axios, { AxiosRequestConfig } from 'axios';
+import { MethodEnum } from '../../../enums/method.enum';
+import { getAuthorizationToken } from './auth';
 
 export type MethodType = 'get' | 'delete' | 'post' | 'put' | 'patch';
 

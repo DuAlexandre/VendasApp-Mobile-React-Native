@@ -1,21 +1,21 @@
-import {useEffect, useState} from 'react';
-import {CreateUserType} from '../../../shared/types/createUserType';
-import {NativeSyntheticEvent, TextInputChangeEventData} from 'react-native';
-import {useRequest} from '../../../shared/hooks/useRequest';
-import {URL_USER} from '../../../shared/constants/urls';
-import {MethodEnum} from '../../../enums/method.enum';
+import { useEffect, useState } from 'react';
+import { CreateUserType } from '../../../shared/types/createUserType';
+import { NativeSyntheticEvent, TextInputChangeEventData } from 'react-native';
+import { useRequest } from '../../../shared/hooks/useRequest';
+import { URL_USER } from '../../../shared/constants/urls';
+import { MethodEnum } from '../../../enums/method.enum';
 import {
   NavigationProp,
   ParamListBase,
   useNavigation,
 } from '@react-navigation/native';
-import {MenuURL} from '../../../shared/enums/MenuURL.enum';
-import {insertMaskInCpf} from '../../../shared/functions/cpf';
-import {insertMaskInPhone} from '../../../shared/functions/phone';
+import { MenuURL } from '../../../shared/enums/MenuURL.enum';
+import { insertMaskInCpf } from '../../../shared/functions/cpf';
+import { insertMaskInPhone } from '../../../shared/functions/phone';
 
 export const useCreateUser = () => {
-  const {request, loading} = useRequest();
-  const {reset} = useNavigation<NavigationProp<ParamListBase>>();
+  const { request, loading } = useRequest();
+  const { reset } = useNavigation<NavigationProp<ParamListBase>>();
   const [disable, setDisable] = useState<boolean>(true);
 
   const [createUser, setCreateUser] = useState<CreateUserType>({
@@ -75,7 +75,7 @@ export const useCreateUser = () => {
     if (resultCreateUser) {
       reset({
         index: 0,
-        routes: [{name: MenuURL.LOGIN}],
+        routes: [{ name: MenuURL.LOGIN }],
       });
     }
   };

@@ -1,7 +1,7 @@
-import {TextProps as TextPropsNative} from 'react-native/types';
-import {ContainerText} from './text.style';
-import {textTypes} from './textTypes';
-import {useMemo} from 'react';
+import { TextProps as TextPropsNative } from 'react-native/types';
+import { ContainerText } from './text.style';
+import { textTypes } from './textTypes';
+import { useMemo } from 'react';
 
 interface Textprops extends TextPropsNative {
   color?: string;
@@ -9,7 +9,7 @@ interface Textprops extends TextPropsNative {
   margin?: string;
 }
 
-const Text = ({color, type, margin, ...props}: Textprops) => {
+const Text = ({ color, type, margin, ...props }: Textprops) => {
   const fontSize = useMemo(() => {
     switch (type) {
       case textTypes.TITLE_BOLD:

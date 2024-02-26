@@ -1,4 +1,4 @@
-import {TouchableOpacityProps} from 'react-native/types';
+import { TouchableOpacityProps } from 'react-native/types';
 import {
   ActivityIndicatorButton,
   ButtonDisabled,
@@ -7,8 +7,8 @@ import {
   SecondaryButton,
 } from './button.style';
 import Text from '../text/Text';
-import {theme} from '../../themes/theme';
-import {textTypes} from '../text/textTypes';
+import { theme } from '../../themes/theme';
+import { textTypes } from '../text/textTypes';
 
 interface ButtonProps extends TouchableOpacityProps {
   title: string;
@@ -63,8 +63,8 @@ const Button = ({
       return (
         <ContainerButton {...props} margin={margin} onPress={handleOnPress}>
           <GradientButton
-            start={{x: 0.0, y: 0.0}}
-            end={{x: 1.0, y: 1.0}}
+            start={{ x: 0.0, y: 0.0 }}
+            end={{ x: 1.0, y: 1.0 }}
             colors={[
               theme.colors.purpleTheme.purple80,
               theme.colors.pinkTheme.pink80,

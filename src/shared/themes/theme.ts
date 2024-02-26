@@ -1,4 +1,4 @@
-import {buttonsTheme} from './buttons';
+import { buttonsTheme } from './buttons';
 import {
   grayTheme,
   mainTheme,

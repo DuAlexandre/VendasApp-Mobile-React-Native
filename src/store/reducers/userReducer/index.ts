@@ -1,5 +1,5 @@
-import {PayloadAction, createSlice} from '@reduxjs/toolkit';
-import {UserType} from '../../../shared/types/userType';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { UserType } from '../../../shared/types/userType';
 
 interface UserStore {
   user?: UserType;
@@ -19,6 +19,6 @@ export const userSlice = createSlice({
   },
 });
 
-export const {setUserAction} = userSlice.actions;
+export const { setUserAction } = userSlice.actions;
 
 export default userSlice.reducer;

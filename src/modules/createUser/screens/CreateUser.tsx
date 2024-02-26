@@ -1,11 +1,16 @@
 import Button from '../../../shared/components/button/Button';
 import Input from '../../../shared/components/input/Input';
-import {useCreateUser} from '../hooks/useCreateUser';
-import {CreateUserContainer} from '../styles/createUser.style';
+import { useCreateUser } from '../hooks/useCreateUser';
+import { CreateUserContainer } from '../styles/createUser.style';
 
 const CreateUser = () => {
-  const {createUser, handleOnChangeInput, handleCreateUser, loading, disable} =
-    useCreateUser();
+  const {
+    createUser,
+    handleOnChangeInput,
+    handleCreateUser,
+    loading,
+    disable,
+  } = useCreateUser();
 
   return (
     <CreateUserContainer>

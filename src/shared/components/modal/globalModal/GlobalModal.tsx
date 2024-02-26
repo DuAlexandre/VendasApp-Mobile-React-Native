@@ -1,8 +1,8 @@
 import Modal from '../Modal';
-import {useGlobalReducer} from '../../../../store/reducers/globalReducer/useGlobalReducer';
+import { useGlobalReducer } from '../../../../store/reducers/globalReducer/useGlobalReducer';
 
 const GlobalModal = () => {
-  const {modal, closeModal} = useGlobalReducer();
+  const { modal, closeModal } = useGlobalReducer();
 
   return (
     <Modal
